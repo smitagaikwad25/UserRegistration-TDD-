@@ -28,5 +28,13 @@ public class UserRegistration {
             return mailId;
         return "Invalid";
     }
+
+    public String analyseMobileNumber(String mobileNumber) {
+        Pattern pattern = Pattern.compile("^[0-9]{2}[ ][0-9]{10}");
+        Matcher matcher = pattern.matcher(mobileNumber);
+        if (matcher.matches())
+            return mobileNumber;
+        return "Invalid";
+    }
 }
 
