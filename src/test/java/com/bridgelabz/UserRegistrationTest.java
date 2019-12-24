@@ -11,4 +11,11 @@ public class UserRegistrationTest {
         String userName = userRegistration.analyserName("Smita");
         Assert.assertEquals("Smita",userName);
     }
+
+    @Test
+    public void givenUserName_WhenNotProper_ShouldReturnInvalid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String userName = userRegistration.analyserName("smita");
+        Assert.assertEquals("Invalid",userName);
+    }
 }
