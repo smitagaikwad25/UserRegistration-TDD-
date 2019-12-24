@@ -25,4 +25,13 @@ public class UserRegistrationTest {
         String userLastName = userRegistration.analyserLastName("Shinde");
         Assert.assertEquals("Shinde",userLastName);
     }
+
+    @Test
+    public void givenUserLastName_WhenNotProper_ShouldReturnInvalid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String userLastName = userRegistration.analyserLastName("shinde");
+        Assert.assertEquals("Invalid",userLastName);
+    }
+
+
 }
