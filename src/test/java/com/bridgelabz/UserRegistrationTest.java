@@ -53,4 +53,11 @@ public class UserRegistrationTest {
         String mobileNumber = userRegistration.analyseMobileNumber("91 1234567891");
         Assert.assertEquals("91 1234567891",mobileNumber);
     }
+
+    @Test
+    public void givenMobileNumber_WhenNotProper_ShouldReturnInvalid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String mobileNumber = userRegistration.analyseMobileNumber("12345 12345");
+        Assert.assertEquals("Invalid",mobileNumber);
+    }
 }
