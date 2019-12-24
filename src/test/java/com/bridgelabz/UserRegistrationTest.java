@@ -20,7 +20,7 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenUserLastName_WhenStartWithCapAndHasMinimunChar_ReturnUserLastName() {
+    public void givenUserLastName_WhenStartWithCapAndHasMinimunThreeChar_ReturnUserLastName() {
         UserRegistration userRegistration = new UserRegistration();
         String userLastName = userRegistration.analyserLastName("Shinde");
         Assert.assertEquals("Shinde",userLastName);
@@ -33,5 +33,12 @@ public class UserRegistrationTest {
         Assert.assertEquals("Invalid",userLastName);
     }
 
+    @Test
+    public void givenMailId_WhenProper_ShouldReturnMailId() {
+        UserRegistration userRegistration = new UserRegistration();
+        String mailId = userRegistration.analyseMailId("smita.shinde123@gmail.com.in");
+        Assert.assertEquals("smita.shinde123@gmail.com.in",mailId);
 
+
+    }
 }
