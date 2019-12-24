@@ -38,7 +38,12 @@ public class UserRegistrationTest {
         UserRegistration userRegistration = new UserRegistration();
         String mailId = userRegistration.analyseMailId("smita.shinde123@gmail.com.in");
         Assert.assertEquals("smita.shinde123@gmail.com.in",mailId);
+    }
 
-
+    @Test
+    public void givenMailId_WhenNotProper_ShouldReturnInvalid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String mailId = userRegistration.analyseMailId("smita@..com.in");
+        Assert.assertEquals("Invalid",mailId);
     }
 }
