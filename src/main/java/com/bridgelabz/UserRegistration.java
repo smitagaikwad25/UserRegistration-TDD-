@@ -36,5 +36,13 @@ public class UserRegistration {
             return mobileNumber;
         return "Invalid";
     }
+
+    public String analysePassWord(String passWord) {
+        Pattern pattern = Pattern.compile("^[a-zA-Z]{8,}$");
+        Matcher matcher = pattern.matcher(passWord);
+        if (matcher.matches())
+            return passWord;
+        return "Invalid";
+    }
 }
 
