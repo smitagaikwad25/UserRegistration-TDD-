@@ -60,4 +60,11 @@ public class UserRegistrationTest {
         String mobileNumber = userRegistration.analyseMobileNumber("12345 12345");
         Assert.assertEquals("Invalid",mobileNumber);
     }
+
+    @Test
+    public void givenPassword_WhenHasMinimumEightChar_ShouldReturnPassword() {
+        UserRegistration userRegistration = new UserRegistration();
+        String passWord = userRegistration.analysePassWord("asdfghjkl");
+        Assert.assertEquals("asdfghjkl",passWord);
+    }
 }
