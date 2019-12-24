@@ -18,4 +18,11 @@ public class UserRegistrationTest {
         String userName = userRegistration.analyserName("smita");
         Assert.assertEquals("Invalid",userName);
     }
+
+    @Test
+    public void givenUserLastName_WhenStartWithCapAndHasMinimunChar_ReturnUserLastName() {
+        UserRegistration userRegistration = new UserRegistration();
+        String userLastName = userRegistration.analyserLastName("Shinde");
+        Assert.assertEquals("Shinde",userLastName);
+    }
 }
