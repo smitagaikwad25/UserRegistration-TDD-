@@ -12,5 +12,13 @@ public class UserRegistration {
             return userName;
         return "Invalid";
     }
+
+    public String analyserLastName(String userLastName) {
+        Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{3,}");
+        Matcher matcher = pattern.matcher(userLastName);
+        if (matcher.matches())
+            return userLastName;
+        return "Invalid";
+    }
 }
 
