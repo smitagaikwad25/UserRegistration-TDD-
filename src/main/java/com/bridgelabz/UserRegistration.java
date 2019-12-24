@@ -38,11 +38,10 @@ public class UserRegistration {
     }
 
     public String analysePassWord(String passWord) {
-        Pattern pattern = Pattern.compile("^(?=.*[A-Z])[a-z].{8,}");
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z]).{8,}");
         Matcher matcher = pattern.matcher(passWord);
         if (matcher.matches())
             return passWord;
         return "Invalid";
     }
 }
-
