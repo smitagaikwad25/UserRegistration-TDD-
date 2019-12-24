@@ -46,4 +46,11 @@ public class UserRegistrationTest {
         String mailId = userRegistration.analyseMailId("smita@..com.in");
         Assert.assertEquals("Invalid",mailId);
     }
+
+    @Test
+    public void givenMobileNumber_WhenProper_ShouldReturnMobileNumber() {
+        UserRegistration userRegistration = new UserRegistration();
+        String mobileNumber = userRegistration.analyseMobileNumber("91 1234567891");
+        Assert.assertEquals("91 1234567891",mobileNumber);
+    }
 }
