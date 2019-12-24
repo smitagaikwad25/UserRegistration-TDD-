@@ -64,7 +64,14 @@ public class UserRegistrationTest {
     @Test
     public void givenPassword_WhenHasMinimumEightChar_ShouldReturnPassword() {
         UserRegistration userRegistration = new UserRegistration();
-        String passWord = userRegistration.analysePassWord("asdfghjkl");
-        Assert.assertEquals("asdfghjkl",passWord);
+        String passWord = userRegistration.analysePassWord("asdfghjkL");
+        Assert.assertEquals("asdfghjkL",passWord);
+    }
+
+    @Test
+    public void givenPassword_WhenNotProper_ShouldReturnInvalid() {
+        UserRegistration userRegistration = new UserRegistration();
+        String passWord = userRegistration.analysePassWord("asd");
+        Assert.assertEquals("Invalid",passWord);
     }
 }
