@@ -2,6 +2,10 @@ package com.bridgelabz;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runners.Parameterized;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 public class UserRegistrationTest {
 
@@ -64,8 +68,8 @@ public class UserRegistrationTest {
     @Test
     public void givenPassword_WhenHasMinimumEightChar_ShouldReturnPassword() {
         UserRegistration userRegistration = new UserRegistration();
-        String passWord = userRegistration.analysePassWord("ASDFGHJ8l");
-        Assert.assertEquals("ASDFGHJ8l",passWord);
+        String passWord = userRegistration.analysePassWord("ASDFGHJ8@");
+        Assert.assertEquals("ASDFGHJ8@",passWord);
     }
 
     @Test
