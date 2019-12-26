@@ -25,7 +25,7 @@ public class UserRegistration {
         Pattern pattern = Pattern.compile("^[a-zA-Z]{1,}([.]{1})?[0-9a-zA-Z]*[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-zA-Z]{2,4}([.]{1})?([a-zA-Z]{2,3})?$");
         Matcher matcher = pattern.matcher(mailId);
         if (matcher.matches())
-            return mailId;
+            return "valid";
         return "Invalid";
     }
 
@@ -38,7 +38,7 @@ public class UserRegistration {
     }
 
     public String analysePassWord(String passWord) {
-        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}");
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.[@!+]{1}).{8,}");
         Matcher matcher = pattern.matcher(passWord);
         if (matcher.matches())
             return passWord;
